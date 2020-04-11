@@ -1,13 +1,31 @@
 import "./styles.css";
+import './app.css';
 import Timer from "./Timer.js";
+import Score from "./Score.js";
+import GridCheckBoxes from './GridCheckBoxes.js';
 
-const timer = new Timer();
-timer.setTimer();
+const timer = new Timer()
 
-document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use Parcel to bundle this sandbox, you can find more info about Parcel
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>
-`;
+const score = new Score()
+const updateScore = score.updateScore.bind(score)
+
+const gridCheckBoxes = new GridCheckBoxes();
+gridCheckBoxes.renderCheckBoxesGrid();
+
+const startBtn = document.getElementById('start-btn');
+startBtn.addEventListener('click', onStartGame);
+
+function onStartGame() {
+  startBtn.setAttribute('disabled', true);
+  timer.setTimer(onStopGame);
+  gridCheckBoxes.addCheckListener(updateScore);
+  gridCheckBoxes.setCheckBoxesEnable(true);
+}
+
+function onStopGame() {
+  startBtn.removeAttribute('disabled');
+  gridCheckBoxes.setCheckBoxesEnable(false);
+  gridCheckBoxes.resetCheckBoxGrid();
+}
+
+

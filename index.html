@@ -7,10 +7,34 @@
 </head>
 
 <body>
-	<div id="app"></div>
-
-	<script src="src/index.js">
-	</script>
+	<div id="app">
+		<div class="container">
+			<div class="header">check the box</div>
+			<div class="subheader">test ur skill .how many boxes in 30 secs?</div>
+			<div class="conatiner-game">
+				<div class="conatiner-game__header">
+					<div class="conatiner-game__header__timer">
+						<label>Time</label>
+						<div id="timer-secs">30</div>
+					</div>
+					<div class="conatiner-game__header__score">
+						<label>score</label>
+						<div id="score-count">0</div>
+					</div>
+				</div>
+				<div id="checkbox-grid"></div>
+				<div class="conatiner-game__footer">
+					<div class="conatiner-game__footer__title">
+						Push start game to start game
+					</div>
+					<button id='start-btn' class="conatiner-game__footer__start">
+						start game
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="src/index.js"></script>
 </body>
 
 </html>
