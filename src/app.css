@@ -2,6 +2,7 @@
   text-transform: capitalize;
   font-size: 1.6rem;
 }
+
 .container .header {
   font-size: 3.6rem;
   text-align: center;
@@ -11,14 +12,17 @@
   padding: 3rem;
   color: white;
 }
+
 .container .subheader {
   font-size: 2.6rem;
   text-align: center;
   padding: 1rem;
 }
+
 .container .conatiner-game {
   padding: 1rem;
 }
+
 .container .conatiner-game__header {
   display: flex;
   flex-direction: row;
@@ -26,15 +30,18 @@
   // height: 4rem;
   margin: 1rem 0;
 }
-.container .conatiner-game__header > div {
+
+.container .conatiner-game__header>div {
   flex-basis: 50%;
   min-height: inherit;
 }
+
 .container .conatiner-game__header__timer {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
 .container .conatiner-game__header__timer #timer-secs {
   border: 1px solid grey;
   min-width: 3rem;
@@ -42,11 +49,13 @@
   margin: 1rem;
   padding: 1rem;
 }
+
 .container .conatiner-game__header__score {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
 .container .conatiner-game__header__score #score-count {
   border: 1px solid grey;
   min-width: 3rem;
@@ -54,9 +63,11 @@
   margin: 1rem;
   padding: 1rem;
 }
+
 .container .conatiner-game #checkbox-grid {
   background-color: #c9c8c8;
 }
+
 .container .conatiner-game #checkbox-grid .checkbox-grid__wrapper {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -66,17 +77,63 @@
   padding: 2rem;
   justify-items: center;
 }
-.container .conatiner-game #checkbox-grid .checkbox-grid__wrapper > input {
+
+.container .conatiner-game #checkbox-grid .checkbox-grid__wrapper>input {
   background-color: #444;
   color: #fff;
   border-radius: 5px;
   padding: 1rem;
   width: 50%;
 }
+
 .container .conatiner-game .conatiner-game__footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 1rem 0;
+}
 
+#modal {
+  height: 50%;
+  width: 50%;
+  z-index: 1;
+  position: fixed;
+  top: 20%;
+  left: 30%;
+  background-color: white;
+  box-shadow: 3px 5px 5px 0px rgba(94, 93, 93, 0.65);
+  padding: 3rem;
+  border: 1px solid grey;
+}
+#modal.show {
+  display: block;
+}
+#modal.hide {
+  display: none;
+}
+#modal .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+#modal .header .header__close {
+  padding: 5px;
+  cursor: pointer;
+}
+#modal .header .header__close:hover {
+  background-color: whitesmoke;
+}
+
+#modal .score{
+  margin: auto;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  font-size: 3.6rem;
+  font-weight: bolder;
 }

@@ -25,11 +25,14 @@ export default class GridCheckBoxes {
     const listener = (event) => {
       const elem = event.target;
       if (elem.getAttribute('class') === 'checkbox-grid__wrapper__check') {
+        console.log(this.checked);
         if (elem.checked) {
           this.checked = this.checked + 1;
         } else {
           this.checked = this.checked - 1;
         }
+        console.log('djdk', this.checked);
+
         typeof updateScore === 'function' ? updateScore(this.checked) : false
       }
     }
@@ -39,7 +42,7 @@ export default class GridCheckBoxes {
   }
 
   removeCheckListener() {
-    this.checkboxGrid.addEventListener('click', this.listener);
+    this.checkboxGrid.removeEventListener('click', this.listener);
 
   }
 
