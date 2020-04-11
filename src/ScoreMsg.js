@@ -1,3 +1,4 @@
+//  show score at end of game
 export default class ScoreMsg {
 
   constructor() {

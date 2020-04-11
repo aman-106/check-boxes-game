@@ -69,6 +69,15 @@
   background-color: #c9c8c8;
 }
 
+.container .conatiner-game #checkbox-grid.active{
+  background-color: #464444;
+}
+
+.container .conatiner-game #checkbox-grid.disable{
+  background-color: #c9c8c8;
+
+}
+
 .container .conatiner-game #checkbox-grid .checkbox-grid__wrapper {
   display: grid;
   grid-template-columns: repeat(10, 1fr);

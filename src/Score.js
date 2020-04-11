@@ -1,3 +1,4 @@
+//  apppend updated score  
 function Score() {
   this.el = document.getElementById("score-count");
 }

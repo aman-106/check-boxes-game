@@ -70,6 +70,11 @@ input[type=submit]:hover,button:hover {
   background-color: #45a049;
 }
 
+button:disabled {
+  background-color: #779778;
+  cursor: not-allowed;
+}
+
 button.btn--remove {
   color: black;
   background-color: #e6b265;

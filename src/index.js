@@ -13,20 +13,20 @@ const resetScore = score.reset.bind(score);
 
 const gridCheckBoxes = new GridCheckBoxes();
 const resetCheckedCount = gridCheckBoxes.resetChecked.bind(gridCheckBoxes);
-
-function resetScoreAndChecked() {
-  resetCheckedCount();
-  resetScore();
-}
-const scoreMsg = new ScoreMsg();
-scoreMsg.addCloseListener(resetScoreAndChecked);
-
-
 gridCheckBoxes.renderCheckBoxesGrid();
 
+function resetBtnScoreAndChecked() {
+  resetCheckedCount();
+  resetScore();
+  startBtn.removeAttribute('disabled');
+}
+const scoreMsg = new ScoreMsg();
+scoreMsg.addCloseListener(resetBtnScoreAndChecked);
+// for start btn add click event lsitener
 const startBtn = document.getElementById('start-btn');
 startBtn.addEventListener('click', onStartGame);
 
+// on start , disbale start btn , set timer , add click event listener and enable check boxes
 function onStartGame() {
   startBtn.setAttribute('disabled', true);
   timer.setTimer(onStopGame);
@@ -34,9 +34,9 @@ function onStartGame() {
   gridCheckBoxes.setCheckBoxesEnable(true);
 }
 
+// on stop , enable start btn , stop timer , remove click event listener and disbale check boxes
 function onStopGame() {
-  startBtn.removeAttribute('disabled');
-  gridCheckBoxes.setCheckBoxesEnable(false);
   gridCheckBoxes.resetCheckBoxGrid();
   scoreMsg.showMsg(gridCheckBoxes.checked);
+  gridCheckBoxes.setCheckBoxesEnable(false);
 }

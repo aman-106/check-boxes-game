@@ -1,4 +1,4 @@
-
+//  create list of check boxes , update chec boxes count , enable and disable check boxes
 export default class GridCheckBoxes {
 
   constructor() {
@@ -66,6 +66,8 @@ export default class GridCheckBoxes {
 
   setCheckBoxesEnable(enable) {
     const wrapper = document.querySelector('.checkbox-grid__wrapper');
+    enable ? this.checkboxGrid.setAttribute('class', 'active') : this.checkboxGrid.setAttribute('class', 'disable')
+
     const checkboxes = wrapper.childNodes;
     for (let i = 0; i < checkboxes.length; i++) {
       const checkbox = checkboxes[i];

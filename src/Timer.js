@@ -1,5 +1,6 @@
 const delay = 1000;
 const timeGap = 30;
+//  show time in secs , start timer and stop time in game 
 function Timer() {
   this.el = document.getElementById("timer-secs");
   this.cancel = false;
