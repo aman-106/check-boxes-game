@@ -1,4 +1,4 @@
-const delay = 100;
+const delay = 1000;
 const timeGap = 30;
 function Timer() {
   this.el = document.getElementById("timer-secs");
