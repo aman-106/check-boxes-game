@@ -11,10 +11,17 @@ const score = new Score()
 const updateScore = score.updateScore.bind(score);
 const resetScore = score.reset.bind(score);
 
-const scoreMsg = new ScoreMsg();
-scoreMsg.addCloseListener(resetScore);
-
 const gridCheckBoxes = new GridCheckBoxes();
+const resetCheckedCount = gridCheckBoxes.resetChecked.bind(gridCheckBoxes);
+
+function resetScoreAndChecked() {
+  resetCheckedCount();
+  resetScore();
+}
+const scoreMsg = new ScoreMsg();
+scoreMsg.addCloseListener(resetScoreAndChecked);
+
+
 gridCheckBoxes.renderCheckBoxesGrid();
 
 const startBtn = document.getElementById('start-btn');
@@ -33,8 +40,3 @@ function onStopGame() {
   gridCheckBoxes.resetCheckBoxGrid();
   scoreMsg.showMsg(gridCheckBoxes.checked);
 }
-
-
-// function show
-
-

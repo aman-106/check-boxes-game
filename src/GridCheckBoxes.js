@@ -60,6 +60,10 @@ export default class GridCheckBoxes {
     this.clearCheckBoxes();
   }
 
+  resetChecked() {
+    this.checked = 0;
+  }
+
   setCheckBoxesEnable(enable) {
     const wrapper = document.querySelector('.checkbox-grid__wrapper');
     const checkboxes = wrapper.childNodes;
