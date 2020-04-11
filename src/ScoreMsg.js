@@ -16,7 +16,7 @@ export default class ScoreMsg {
   }
 
   renderMsg(score) {
-    this.score.innerText = score;
+    this.score.innerText = 'Your final score is ' + score;
   }
 
   showMsg(score = 0) {
